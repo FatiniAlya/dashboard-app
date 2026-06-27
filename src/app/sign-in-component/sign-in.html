@@ -1,0 +1,59 @@
+<div class="login-container">
+  <div class="login-card">
+    <h2>Sign in to your dashboard</h2>
+
+    <form #loginForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
+      <div class="form-group">
+        <input 
+          type="text" 
+          id="username" 
+          name="username"
+          required
+          #usernameModel="ngModel"
+          [(ngModel)]="credentials.username"
+          placeholder="Username"
+          [class.input-error]="usernameModel.invalid && (usernameModel.touched || loginForm.submitted)"
+        />
+        @if (usernameModel.invalid && (usernameModel.touched || loginForm.submitted)) {
+          <span class="field-error">Username is required</span>
+        }
+      </div>
+
+      <div class="form-group">
+        <input 
+          type="password" 
+          id="password" 
+          name="password"
+          required
+          #passwordModel="ngModel"
+          [(ngModel)]="credentials.password"
+          placeholder="Password"
+          [class.input-error]="passwordModel.invalid && (passwordModel.touched || loginForm.submitted)"
+        />
+        @if (passwordModel.invalid && (passwordModel.touched || loginForm.submitted)) {
+          <span class="field-error">Password is required</span>
+        }
+      </div>
+
+        <button type="submit" class="btn-primary-blue">
+            SIGN IN
+        </button>
+    </form>
+  </div>
+</div>
+
+@if (errorMessage) {
+  <div class="modal-overlay">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3>Authentication Failed</h3>
+      </div>
+      <div class="modal-body">
+        <p>{{ errorMessage }}</p>
+      </div>
+      <div class="modal-footer">
+        <button class="modal-close-btn" (click)="errorMessage = ''">OK</button>
+      </div>
+    </div>
+  </div>
+}

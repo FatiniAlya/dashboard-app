@@ -1,0 +1,285 @@
+/* General Layout Wrapper */
+.dashboard-wrapper {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Dark Top Navigation Header */
+.navbar-dark {
+  background-color: #212529; 
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 40px; 
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.navbar-brand {
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: #6d6a6a; 
+  letter-spacing: 0.3px;
+}
+
+/* Sign Out Button Style */
+.logout-link-btn {
+  background: transparent;
+  border: none; 
+  color: #6d6a6a; 
+  padding: 0;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px; 
+  font-size: 1.05rem;
+  font-weight: 400;
+  transition: color 0.2s ease;
+}
+
+.logout-link-btn:hover {
+  color: #ffffff; 
+}
+
+.logout-link-btn svg {
+  stroke: currentColor; 
+  opacity: 0.85;
+}
+
+/* Main Core Layout Canvas Grid */
+.dashboard-main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px 20px;
+}
+
+.section-title {
+  font-size: 1.75rem;
+  color: #212529;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+/* Overview Section Cards Flexbox Layout Grid */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+.analytic-card {
+  background: #ffffff;
+  border: 1px solid #c4c4c4;
+  border-radius: 6px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+  overflow: hidden;
+}
+
+.card-header {
+  background-color: #f8f9fa;
+  border-bottom: none;
+  padding: 20px 20px;
+  font-weight: 550;
+  color: #495057;
+}
+
+.card-body {
+  padding: 25px;
+  min-height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-col {
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Donut chart styles */
+.donut-chart-mock {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+
+  background: conic-gradient(
+    #cfcfcf 0% 25%, 
+    #b8b8b8 25% 47%, 
+    #a1a1a1 47% 76%, 
+    #8a8a8a 76% 100%
+  );
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.05);
+}
+
+.donut-chart-mock::after {
+  content: '';
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* Donut chart styles */
+.bar-chart-mock {
+  display: flex;
+  align-items: flex-end; 
+  justify-content: space-between; 
+  gap: 25px;
+  height: 160px;
+  width: 100%;
+  max-width: 350px;
+  border-bottom: 2px solid #dee2e6; /* Horizontal Line */
+  border-left: 2px solid #dee2e6;   /* Vertical Line */
+  padding-left: 15px;
+  padding-right: 5px;
+  padding-bottom: 0px;
+}
+
+.bar {
+  flex: 1;
+  background-color: #9e9e9e; 
+  border-radius: 2px 2px 0 0;
+  transition: height 0.4s ease;
+}
+
+.raw-data-debug {
+  font-family: monospace;
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+
+/* Tabular User View Components Styles */
+.table-responsive-container {
+  background: #ffffff;
+  border: 1px solid #c4c4c4;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-top: 15px;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left; 
+  font-family: inherit;
+}
+
+.data-table th {
+  background-color: #f8f9fa;
+  color: #212529;
+  font-weight: 570;
+  font-size: 0.75rem; 
+  padding: 16px 20px; 
+  border-bottom: 1px solid #c4c4c4;
+  border-right: 1px solid #c4c4c4;
+}
+
+/* Remove the right border on the last column header */
+.data-table th:last-child {
+  border-right: none;
+}
+
+.data-table td {
+  padding: 16px 20px;
+  border-bottom: 1px solid #c4c4c4;
+  border-right: 1px solid #c4c4c4;
+  color: #212529;
+  font-weight: 570;
+  font-size: 0.75rem;
+}
+
+/* Remove the right border on the last column cells */
+.data-table td:last-child {
+  border-right: none;
+}
+
+/* Remove the bottom border on the last row */
+.data-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Specific alignments matching the image mockup */
+.data-table th.col-center,
+.data-table td.col-center {
+  text-align: center; 
+}
+
+/* Authentication Modal Windows Overlay UI Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-box {
+  background: #ffffff;
+  border-radius: 6px;
+  width: 100%;
+  max-width: 450px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  overflow: hidden;
+}
+
+.modal-header {
+  background-color: #dc3545;
+  color: #ffffff;
+  padding: 15px 20px;
+  font-weight: 600;
+}
+
+.modal-body {
+  padding: 20px;
+  color: #495057;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.modal-footer {
+  padding: 15px 20px;
+  background-color: #f8f9fa;
+  display: flex;
+  justify-content: flex-end;
+  border-top: 1px solid #dee2e6;
+}
+
+.modal-close-btn {
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.modal-close-btn:hover {
+  background-color: #5a6268;
+}
+
+/* Dashboard State Message (Loading & Error Containers) */
+.dashboard-state-msg {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px 40px; 
+  font-family: inherit;
+  color: #212529;
+  font-size: 1.1rem;
+}

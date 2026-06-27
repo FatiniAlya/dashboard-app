@@ -1,0 +1,247 @@
+/* Base Layout Reset */
+body, html {
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa; 
+  color: #333333;
+}
+
+/* Centered Sign In Wrapper Container */
+.login-container {
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* The Sign In Form Card Module */
+.login-card {
+  width: 100%;
+  max-width: 440px;
+  background: #ffffff;
+  border: 1px solid #c4c4c4;
+  border-bottom: 1px solid #dee2e6 !important;
+  border-radius: 6px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+/* UI Title Header Block */
+.login-card h2 {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+  font-size: 18px;
+  font-weight: 500;
+  color: #6d6a6a;
+  text-align: center;
+  margin: 0;
+  padding: 16px 0;
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #e5e5e5;
+  border-bottom: none !important;
+}
+
+/* Form Layout Inner Area Wrapper */
+.login-card form {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Interactive Input Elements Formatting */
+.form-group input {
+  width: 100%;
+  padding: 12px 14px;
+  box-sizing: border-box;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  font-size: 15px;
+  color: #333333;
+  transition: border-color 0.15s ease-in-out;
+}
+
+.form-group input::placeholder {
+  color: #b3b3b3; 
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #3b71ca;
+}
+
+/* Form Dynamic Field Error Outlines */
+.form-group .input-error {
+  border-color: #dc3545;
+}
+
+.field-error {
+  font-size: 13px;
+  color: #dc3545;
+  margin-top: 6px;
+  display: block;
+}
+
+/* Error Presentation Banner */
+.error-banner {
+  background-color: #fdf2f2;
+  border: 1px solid #fecaca;
+  color: #b91c1c;
+  padding: 12px 16px;
+  border-radius: 4px;
+  font-size: 14px;
+  margin: 0 30px;
+}
+
+/* Forces the button to be perfectly blue and styled from the very start */
+.btn-primary-blue {
+  background-color: #4a86e8 !important;
+  color: #ffffff !important;            
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-weight: 700;                     
+  font-size: 0.75rem;
+  letter-spacing: 0.5px;
+  align-self: flex-start;
+  
+  /* Sizing and layout shapes */
+  padding: 12px 28px;
+  border: none;
+  border-radius: 6px;                 
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+/* Subtle hover interaction effects */
+.btn-primary-blue:hover {
+  background-color: #3a75d8 !important; 
+}
+
+.btn-primary-blue:active {
+  transform: scale(0.98);               
+}
+
+/* Dashboard Section Layout Styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 0 32px;
+  height: 64px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.navbar-brand {
+  font-size: 20px;
+  font-weight: 700;
+  color: #316fd2;
+}
+
+.logout-btn {
+  background-color: #dc3545;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.dashboard-content {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 24px;
+}
+
+.workspace-card {
+  background: white;
+  border: 1px solid #dcdcdc;
+  border-radius: 6px;
+  padding: 48px;
+  text-align: center;
+}
+
+/* Modal Backdrop Layer */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999; 
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Modal Content Card Box */
+.modal-box {
+  background: #ffffff;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 6px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  animation: popIn 0.2s ease-out; 
+}
+
+.modal-header {
+  background-color: #f5f5f5;
+  padding: 16px 20px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.modal-header h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #dc3545; 
+}
+
+.modal-body {
+  padding: 20px;
+  font-size: 15px;
+  color: #444444;
+  line-height: 1.5;
+}
+
+.modal-footer {
+  padding: 12px 20px;
+  background-color: #f9f9f9;
+  border-top: 1px solid #e5e5e5;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Modal Confirmation Action Dismiss Trigger Button */
+.modal-close-btn {
+  background-color: #316fd2;
+  color: #ffffff;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.1s ease;
+}
+
+.modal-close-btn:hover {
+  background-color: #265cb3;
+}
+
+/* Keyframes pop animation */
+@keyframes popIn {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
